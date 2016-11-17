@@ -334,11 +334,6 @@
     			</xsd:simpleType>
     		</xsd:element>
     		<xsd:element name="validade" maxOccurs="1" minOccurs="0">
-    			<xsd:annotation>
-    				<xsd:documentation>
-    					Formato YYYYMM
-    				</xsd:documentation>
-    			</xsd:annotation>
     			<xsd:simpleType>
     				<xsd:restriction base="xsd:string">
     					<xsd:pattern value="[0-9]{0,6}"></xsd:pattern>   					
