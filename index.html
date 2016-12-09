@@ -762,8 +762,7 @@ mensagem=&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;&lt;requisicao-captura
 </tr>
 </tbody></table>
 
-<aside class="warning">O valor do resultante da divisão do valor do pedido pelo número de parcelas não deve ser
-inferior a R$5,00. Caso contrário a transação será negada.</aside>
+<aside class="warning">O valor resultante da divisão do valor do pedido pelo número de parcelas não deve ser inferior a R$ 5,00. Para transações Visa, a autorização será negada. Para transações MasterCard, Elo, Diners, Discover, Aura e JCB, a transação que for aprovada, terá seu plano parcelado alterado para à vista. Para evitar reclamações, permita apenas transações parceladas com a parcela mínima acima de R$ 5,00.</aside>
 
 <h2 id="fluxos-de-integração-e-redirecionamentos">Fluxos de integração e redirecionamentos</h2>
 
@@ -1116,7 +1115,7 @@ inferior a R$5,00. Caso contrário a transação será negada.</aside>
 <td>Transação não autorizada. Cartão inadimplente (Do not honor).</td>
 <td>Transação não autorizada. Não foi possível processar a transação. Questão relacionada a segurança, inadimplencia ou limite do portador.</td>
 <td>Transação não autorizada. Entre em contato com seu banco emissor.</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>06</td>
@@ -1179,7 +1178,7 @@ inferior a R$5,00. Caso contrário a transação será negada.</aside>
 <td>Refaça a transação ou tente novamente mais tarde.</td>
 <td>Não foi possível processar a transação. Refaça a transação ou tente novamente mais tarde. Se o erro persistir, entre em contato com a Cielo.</td>
 <td>Não foi possível processar a transação. Refaça a transação ou tente novamente mais tarde. Se o erro persistir entre em contato com a loja virtual.</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>21</td>
@@ -1214,14 +1213,21 @@ inferior a R$5,00. Caso contrário a transação será negada.</aside>
 <td>Pedido de autorização não enviou número do cartão</td>
 <td>Não foi possível processar a transação. Solicitação de autorização não enviou o número do cartão. Se o erro persistir, verifique a comunicação entre loja virtual e Cielo.</td>
 <td>Não foi possível processar a transação. reveja os dados informados e tente novamente. Persistindo o erro, entrar em contato com a loja virtual.</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>28</td>
 <td>Arquivo temporariamente indisponível.</td>
 <td>Não foi possível processar a transação. Arquivo temporariamente indisponível. Reveja a comunicação entre Loja Virtual e Cielo. Se o erro persistir, entre em contato com a Cielo.</td>
 <td>Não foi possível processar a transação. Entre com contato com a Loja Virtual.</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Transação não autorizada. Decline Message</td>
+<td>Não foi possível processar a transação. Solicite ao portador que reveja os dados e tente novamente. Se o erro persistir verifique a comunicação com a Cielo esta sendo feita corretamente.</td>
+<td>Não foi possível processar a transação. Reveja os dados e tente novamente. Se o erro persistir, entre em contato com a loja virtual.</td>
+<td>Não</td>
 </tr>
 <tr>
 <td>39</td>
@@ -1249,7 +1255,7 @@ inferior a R$5,00. Caso contrário a transação será negada.</aside>
 <td>Transação não autorizada. Limite excedido/sem saldo.</td>
 <td>Transação não autorizada. Limite excedido/sem saldo.</td>
 <td>Transação não autorizada. Entre em contato com seu banco emissor.</td>
-<td>A partir do dia seguinte, apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>52</td>
@@ -1284,7 +1290,7 @@ inferior a R$5,00. Caso contrário a transação será negada.</aside>
 <td>Transação não permitida para o cartão</td>
 <td>Transação não autorizada. Transação não permitida para o cartão.</td>
 <td>Transação não autorizada. Entre em contato com seu banco emissor.</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>58</td>
@@ -1305,21 +1311,21 @@ inferior a R$5,00. Caso contrário a transação será negada.</aside>
 <td>Transação não autorizada.</td>
 <td>Transação não autorizada. Tente novamente. Se o erro persistir o portador deve entrar em contato com o banco emissor.</td>
 <td>Não foi possível processar a transação. Tente novamente mais tarde. Se o erro persistir, entre em contato com seu banco emissor.</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>61</td>
 <td>Banco emissor Visa indisponível.</td>
 <td>Transação não autorizada. Banco emissor Visa indisponível.</td>
 <td>Transação não autorizada. Tente novamente. Se o erro persistir, entre em contato com seu banco emissor.</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>62</td>
 <td>Transação não autorizada. Cartão restrito para uso doméstico</td>
 <td>Transação não autorizada. Cartão restrito para uso doméstico.</td>
 <td>Transação não autorizada. Entre em contato com seu banco emissor.</td>
-<td>A partir do dia seguinte, apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>63</td>
@@ -1340,21 +1346,21 @@ inferior a R$5,00. Caso contrário a transação será negada.</aside>
 <td>Transação não autorizada. Excedida a quantidade de transações para o cartão.</td>
 <td>Transação não autorizada. Excedida a quantidade de transações para o cartão.</td>
 <td>Transação não autorizada. Entre em contato com seu banco emissor.</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>67</td>
 <td>Transação não autorizada. Cartão bloqueado para compras hoje.</td>
 <td>Transação não autorizada. Cartão bloqueado para compras hoje. Bloqueio pode ter ocorrido por excesso de tentativas inválidas. O cartão será desbloqueado automaticamente à meia noite.</td>
 <td>Transação não autorizada. Cartão bloqueado temporariamente. Entre em contato com seu banco emissor.</td>
-<td>A partir do dia seguinte, apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>70</td>
 <td>Transação não autorizada. Limite excedido/sem saldo.</td>
 <td>Transação não autorizada. Limite excedido/sem saldo.</td>
 <td>Transação não autorizada. Entre em contato com seu banco emissor.</td>
-<td>A partir do dia seguinte, apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>72</td>
@@ -1438,7 +1444,7 @@ inferior a R$5,00. Caso contrário a transação será negada.</aside>
 <td>Erro na transação.</td>
 <td>Transação não autorizada. Erro na transação. O portador deve tentar novamente e se o erro persistir, entrar em contato com o banco emissor.</td>
 <td>Transação não autorizada. Erro na transação. Tente novamente e se o erro persistir, entre em contato com seu banco emissor.</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>90</td>
@@ -1452,14 +1458,14 @@ inferior a R$5,00. Caso contrário a transação será negada.</aside>
 <td>Transação não autorizada. Banco emissor temporariamente indisponível.</td>
 <td>Transação não autorizada. Banco emissor temporariamente indisponível.</td>
 <td>Transação não autorizada. Banco emissor temporariamente indisponível. Entre em contato com seu banco emissor.</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>92</td>
 <td>Transação não autorizada. Tempo de comunicação excedido.</td>
 <td>Transação não autorizada. Tempo de comunicação excedido.</td>
 <td>Transação não autorizada. Comunicação temporariamente indisponível. Entre em contato com a loja virtual.</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>93</td>
@@ -1473,7 +1479,7 @@ inferior a R$5,00. Caso contrário a transação será negada.</aside>
 <td>Falha no processamento.</td>
 <td>Não foi possível processar a transação. Falha no sistema da Cielo. Se o erro persistir, entre em contato com a Cielo.</td>
 <td>Sua Transação não pode ser processada, Tente novamente mais tarde. Se o erro persistir, entre em contato com a loja virtual.</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>97</td>
@@ -1487,28 +1493,28 @@ inferior a R$5,00. Caso contrário a transação será negada.</aside>
 <td>Sistema/comunicação indisponível.</td>
 <td>Transação não autorizada. Sistema do emissor sem comunicação. Se for geral, verificar SITEF, GATEWAY e/ou Conectividade.</td>
 <td>Sua Transação não pode ser processada, Tente novamente mais tarde. Se o erro persistir, entre em contato com a loja virtual.</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>99</td>
 <td>Sistema/comunicação indisponível.</td>
 <td>Transação não autorizada. Sistema do emissor sem comunicação. Tente mais tarde.  Pode ser erro no SITEF, favor verificar !</td>
 <td>Sua Transação não pode ser processada, Tente novamente mais tarde. Se o erro persistir, entre em contato com a loja virtual.</td>
-<td>A partir do dia seguinte, apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>999</td>
 <td>Sistema/comunicação indisponível.</td>
 <td>Transação não autorizada. Sistema do emissor sem comunicação. Tente mais tarde.  Pode ser erro no SITEF, favor verificar !</td>
 <td>Sua Transação não pode ser processada, Tente novamente mais tarde. Se o erro persistir, entre em contato com a loja virtual.</td>
-<td>A partir do dia seguinte, apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>AA</td>
 <td>Tempo Excedido</td>
 <td>Tempo excedido na comunicação com o banco emissor. Oriente o portador a tentar novamente, se o erro persistir será necessário que o portador contate seu banco emissor.</td>
 <td>Tempo excedido na sua comunicação com o banco emissor, tente novamente mais tarde. Se o erro persistir, entre em contato com seu banco.</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>AC</td>
@@ -1522,7 +1528,7 @@ inferior a R$5,00. Caso contrário a transação será negada.</aside>
 <td>Tente Mais Tarde</td>
 <td>Tempo excedido na comunicação com o banco emissor. Oriente o portador a tentar novamente, se o erro persistir será necessário que o portador contate seu banco emissor.</td>
 <td>Tempo excedido na sua comunicação com o banco emissor, tente novamente mais tarde. Se o erro persistir, entre em contato com seu banco.</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>AF</td>
@@ -1564,7 +1570,7 @@ inferior a R$5,00. Caso contrário a transação será negada.</aside>
 <td>Transação não autorizada. Dados Inválidos</td>
 <td>Falha na validação dos dados da transação. Oriente o portador a rever os dados e tentar novamente.</td>
 <td>Falha na validação dos dados. Reveja os dados informados e tente novamente.</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>BD</td>
@@ -1578,7 +1584,7 @@ inferior a R$5,00. Caso contrário a transação será negada.</aside>
 <td>Transação não autorizada. Limite diário excedido.</td>
 <td>Transação não autorizada. Limite diário excedido. Solicite ao portador que entre em contato com seu banco emissor.</td>
 <td>Transação não autorizada. Limite diário excedido. Entre em contato com seu banco emissor.</td>
-<td>A partir do dia seguinte, apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>BM</td>
@@ -1599,7 +1605,7 @@ inferior a R$5,00. Caso contrário a transação será negada.</aside>
 <td>Transação não permitida. Falha da operação.</td>
 <td>Transação não permitida. Houve um erro no processamento. Solicite ao portador que digite novamente os dados do cartão, se o erro persistir, entre em contato com o banco emissor.</td>
 <td>Transação não permitida. Houve um erro no processamento. Digite novamente os dados do cartão, se o erro persistir, entre em contato com o banco emissor.</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>BP</td>
@@ -1641,14 +1647,14 @@ inferior a R$5,00. Caso contrário a transação será negada.</aside>
 <td>Transação não permitida. Falha no cartão ou cartão inválido.</td>
 <td>Transação não permitida. Falha no cartão ou cartão inválido. Solicite ao portador que digite novamente os dados do cartão, se o erro persistir, entre em contato com o banco</td>
 <td>Transação não permitida. Falha no cartão ou cartão inválido. Digite novamente os dados do cartão, se o erro persistir, entre em contato com o banco</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>DM</td>
 <td>Transação não autorizada. Limite excedido/sem saldo.</td>
 <td>Transação não autorizada. Limite excedido/sem saldo.</td>
 <td>Transação não autorizada. Entre em contato com seu banco emissor.</td>
-<td>A partir do dia seguinte, apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>DQ</td>
@@ -1662,14 +1668,14 @@ inferior a R$5,00. Caso contrário a transação será negada.</aside>
 <td>Transação não permitida para o cartão</td>
 <td>Transação não autorizada. Transação não permitida para o cartão.</td>
 <td>Transação não autorizada. Entre em contato com seu banco emissor.</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>EB</td>
 <td>Transação não autorizada. Limite diário excedido.</td>
 <td>Transação não autorizada. Limite diário excedido. Solicite ao portador que entre em contato com seu banco emissor.</td>
 <td>Transação não autorizada. Limite diário excedido. Entre em contato com seu banco emissor.</td>
-<td>A partir do dia seguinte, apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>EE</td>
@@ -1681,9 +1687,9 @@ inferior a R$5,00. Caso contrário a transação será negada.</aside>
 <tr>
 <td>EK</td>
 <td>Transação não permitida para o cartão</td>
-<td>Transação não autorizada. Transação não permitida para o cartão.</td>
-<td>Transação não autorizada. Entre em contato com seu banco emissor.</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Transação não autorizada. Transação não permitida para o cartão. Solicite ao portador que reveja os dados e tente novamente. Se o erro persistir significa que o lojista não possui essa modalidade de pagamento habilitada. Entre em contato com a Cielo e solicite a habilitação dessa modalidade.</td>
+<td>Transação não autorizada. Reveja os dados e tente novamente. Se o erro persistir, entre em contato com a Loja Virtual.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>FA</td>
@@ -1742,6 +1748,13 @@ inferior a R$5,00. Caso contrário a transação será negada.</aside>
 <td>Não</td>
 </tr>
 <tr>
+<td>GD</td>
+<td>Transação não permitida.</td>
+<td>Transação não permitida. Transação não é possível ser processada no estabelecimento. Entre em contato com a Cielo para obter mais detalhes.</td>
+<td>Transação não permitida. Entre em contato com a loja virtual.</td>
+<td>Não</td>
+</tr>
+<tr>
 <td>HJ</td>
 <td>Transação não permitida. Código da operação inválido.</td>
 <td>Transação não permitida. Código da operação Coban inválido.</td>
@@ -1795,7 +1808,7 @@ inferior a R$5,00. Caso contrário a transação será negada.</aside>
 <td>Transação não autorizada. Cartão inadimplente (Do not honor).</td>
 <td>Transação não autorizada. Não foi possível processar a transação. Questão relacionada a segurança, inadimplencia ou limite do portador.</td>
 <td>Transação não autorizada. Entre em contato com seu banco emissor.</td>
-<td>Apenas 4 vezes em 16 dias.</td>
+<td>Sim</td>
 </tr>
 <tr>
 <td>U3</td>
