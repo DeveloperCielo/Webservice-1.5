@@ -1300,6 +1300,67 @@ O produto débito obrigatoriamente exige uma transação autenticada, caso contr
 
 <aside class="warning">Conforme contrato, este serviço adicional está sujeito a cobrança a partir do momento em que a consulta de AVS for solicitada. Para maiores informações, favor entrar em contato com a central de atendimento, seu gerente de contas ou o Suporte Web Cielo eCommerce.</aside>
 
+## Consulta
+
+A operação de consulta é essencial na integração, pois ela que garantirá a situação atual de uma transação. Ela deve ser executada ao término do processo de autorização, no momento em que a Loja Virtual recebe o fluxo de execução na URL informada na primeira requisição (através da TAG <url-retorno>). O E-commerce pode levar até 25 segundos para processar completamente uma transação.
+
+### Consulta por TID
+
+* **Objetivo** - Realizar a consulta de uma transação através do TID informado.
+* **Regras**
+    * Somente transações dos últimos 365 dias estão disponíveis.
+    * Não há mudança de status da transação.
+
+#### Requisição
+
+```xml
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<requisicao-consulta id="6fcf758e-bc60-4d6a-acf4-496593a40441" versao="1.2.1">
+  <tid>100699306903609A1001</tid>
+  <dados-ec>
+    <numero>1006993069</numero>
+    <chave>25fbb99741c739dd84d7b06ec78c9bac718838630f30b112d033ce2e621b34f3
+    </chave>
+  </dados-ec>
+</requisicao-consulta>
+```
+
+|TAG|Tipo|Obrig.|Tam.|Descrição|
+|---|----|------|----|---------|
+|dados-ec.numero|Numérico|Sim|1..20|Número de afiliação da loja com a Cielo.|
+|dados-ec.chave|Alfanumérico|Sim|1..100|Chave de acesso da loja atribuída pela Cielo.|
+|Tid|Alfanumérico|Sim|1..40|Identificador da transação|
+
+### Consulta por Número do Pedido
+
+* **Objetivo** - Realizar a consulta de uma transação através do número do pedido, fornecido pela loja no momento da requisição de transação.
+* **Regras**:
+    * Somente transações dos últimos 365 dias estão disponíveis.
+    * Caso seja encontrada mais de uma transação para o mesmo número do pedido, a Cielo enviará a transação mais recente.
+    * Não há mudança de status da transação.
+
+<aside class="notice"><strong>INFORMAÇÃO</strong>: A consulta por Número do Pedido deve ser usada apenas como contingência à Consulta por TID, pois esta pode não garantir unicidade da transação, tendo em vista que este campo é enviado pela loja virtual e apenas acatado pela Cielo.</aside>
+
+#### Requisição
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<requisicao-consulta-chsec id="a51489b1-93d5-437f-bb4f-5b932fade248" versao="1.2.1">
+  <numero-pedido>1663784368</numero-pedido>
+  <dados-ec>
+    <numero>1006993069</numero>
+    <chave>25fbb99741c739dd84d7b06ec78c9bac718838630f30b112d033ce2e621b34f3
+    </chave>
+  </dados-ec>
+</requisicao-consulta-chsec>
+```
+
+|TAG|Tipo|Obrig.|Tam.|Descrição|
+|---|----|------|----|---------|
+|dados-ec.numero|Numérico|Sim|1..20|Número de afiliação da loja com a Cielo.|
+|dados-ec.chave|Alfanumérico|Sim|1..100|Chave de acesso da loja atribuída pela Cielo.|
+|Numero|Alfanumérico|Sim|1..20|Número do pedido associado a uma transação.|
+
 ## Captura
 
 Uma transação autorizada somente gera o crédito para o estabelecimento comercial caso ela seja capturada. Por isso, **toda venda que o lojista queira efetivar será preciso realizar a captura (ou confirmação) da transação**.
