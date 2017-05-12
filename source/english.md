@@ -4,7 +4,7 @@ title: Webservice integration 1.5
 language_tabs:
   - xml: XML
 
-toc_footers: 
+toc_footers:
   - <a href='/Cartoes-e-validacao/'>Good Practices of eCommerce</a>
   - <a href='/Webservice-1.5-FAQ'>Frequently Asked Questions</a>
   - <a href='/Webservice-1.5-Processamento-em-lote/english.html'>Batch Processing</a>
@@ -101,15 +101,14 @@ It is a certificate of greater confidence and when https is accessed, the addres
 
 ![Certificado EV Google Chrome](./images/certificado-chrome.jpg)
 
-## How to install the Extended Validation Certificate in the shop server?
+## How to install the Extended Validation Certificate on the Store server?
 
-You just need to install the three following files on the Trustedstore server. Cielo does not support the installation of the certificate. If you are unsure on how to perform install the EV Certificate, then you should contact your server vendor support.
+Just install the following three files in the server Trustedstore. Cielo does not offer support to the installation of the Certificate. If you are unsure about how to install the EV Certificate, then you should contact your server vendor support.
 
-* [Root Certificate](./attachment/Raiz.crt)
-* [Intermediate Certificate](./attachment/Intermediaria.crt)
-* [E-Commerce Cielo Certificate](./attachment/ecommerce.cielo.com.br.crt)
-
-<aside class="notice">If your server is a Linux distribution and you have familiarity and ssh access, then <a href="./attachment/cielo.sh">the Linux Installer - cielo.sh</a> can help you with the installation. Only use the installer if you know what you're doing. When in doubt, contact your server vendor support.</aside>
+* [Root Certificate](./attachment/Root.crt)
+* [Intermediate 1](./attachment/Intermediate1.crt)
+* [Intermediate 2](./attachment/Intermediate2.crt)
+* [Server Certificate](./attachment/ServerCertificate.crt)
 
 ## Step by Step Installation
 
@@ -125,11 +124,12 @@ Normally, the browser makes a Certificate update automatically, in  case of fail
 
 #### 1st STEP:
 
-Save the three files below into a new folder, or recall easily to be used later:
+Save the files below into a new folder, or recall easily to be used later:
 
-* [Root Certificate](./attachment/Raiz.crt)
-* [Intermediate Certificate](./attachment/Intermediaria.crt)
-* [E-Commerce Cielo Certificate](./attachment/ecommerce.cielo.com.br.crt)
+* [Root Certificate](./attachment/Root.crt)
+* [Intermediate 1](./attachment/Intermediate1.crt)
+* [Intermediate 2](./attachment/Intermediate2.crt)
+* [Server Certificate](./attachment/ServerCertificate.crt)
 
 #### 2nd STEP:
 
@@ -1452,7 +1452,7 @@ In response, Cielo will return the valid key on production environment. Therefor
 * Webservice interact: tests with the connection that you use.
 * Visual integration: round trip of Cielo flow (an alternative flow must be considered).
 * Correct payment modalities: tests with possible combination of payment.
-* Payment methods: testing with the possible combination of payment. 
+* Payment methods: testing with the possible combination of payment.
 
 At this moment, you have to consider the environment: [https://ecommerce.cielo.com.br/servicos/ecommwsec.do](https://ecommerce.cielo.com.br/servicos/ecommwsec.do)
 
