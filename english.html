@@ -250,17 +250,16 @@
 
 <p><img alt="Certificado EV Google Chrome" src="images/certificado-chrome.jpg" /></p>
 
-<h2 id="how-to-install-the-extended-validation-certificate-in-the-shop-server?">How to install the Extended Validation Certificate in the shop server?</h2>
+<h2 id="how-to-install-the-extended-validation-certificate-on-the-store-server?">How to install the Extended Validation Certificate on the Store server?</h2>
 
-<p>You just need to install the three following files on the Trustedstore server. Cielo does not support the installation of the certificate. If you are unsure on how to perform install the EV Certificate, then you should contact your server vendor support.</p>
+<p>Just install the following three files in the server Trustedstore. Cielo does not offer support to the installation of the Certificate. If you are unsure about how to install the EV Certificate, then you should contact your server vendor support.</p>
 
 <ul>
-<li><a href="attachment/Raiz.crt">Root Certificate</a></li>
-<li><a href="attachment/Intermediaria.crt">Intermediate Certificate</a></li>
-<li><a href="attachment/ecommerce.cielo.com.br.crt">E-Commerce Cielo Certificate</a></li>
+<li><a href="attachment/Root.crt">Root Certificate</a></li>
+<li><a href="attachment/Intermediate1.crt">Intermediate 1</a></li>
+<li><a href="attachment/Intermediate2.crt">Intermediate 2</a></li>
+<li><a href="attachment/ServerCertificate.crt">Server Certificate</a></li>
 </ul>
-
-<aside class="notice">If your server is a Linux distribution and you have familiarity and ssh access, then <a href="./attachment/cielo.sh">the Linux Installer - cielo.sh</a> can help you with the installation. Only use the installer if you know what you&rsquo;re doing. When in doubt, contact your server vendor support.</aside>
 
 <h2 id="step-by-step-installation">Step by Step Installation</h2>
 
@@ -276,12 +275,13 @@
 
 <h4 id="1st-step:">1st STEP:</h4>
 
-<p>Save the three files below into a new folder, or recall easily to be used later:</p>
+<p>Save the files below into a new folder, or recall easily to be used later:</p>
 
 <ul>
-<li><a href="attachment/Raiz.crt">Root Certificate</a></li>
-<li><a href="attachment/Intermediaria.crt">Intermediate Certificate</a></li>
-<li><a href="attachment/ecommerce.cielo.com.br.crt">E-Commerce Cielo Certificate</a></li>
+<li><a href="attachment/Root.crt">Root Certificate</a></li>
+<li><a href="attachment/Intermediate1.crt">Intermediate 1</a></li>
+<li><a href="attachment/Intermediate2.crt">Intermediate 2</a></li>
+<li><a href="attachment/ServerCertificate.crt">Server Certificate</a></li>
 </ul>
 
 <h4 id="2nd-step:">2nd STEP:</h4>
@@ -3147,7 +3147,7 @@ mensagem=&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;&lt;requisicao-captura
 <li>Webservice interact: tests with the connection that you use.</li>
 <li>Visual integration: round trip of Cielo flow (an alternative flow must be considered).</li>
 <li>Correct payment modalities: tests with possible combination of payment.</li>
-<li>Payment methods: testing with the possible combination of payment. </li>
+<li>Payment methods: testing with the possible combination of payment.</li>
 </ul>
 
 <p>At this moment, you have to consider the environment: <a href="https://ecommerce.cielo.com.br/servicos/ecommwsec.do">https://ecommerce.cielo.com.br/servicos/ecommwsec.do</a></p>
