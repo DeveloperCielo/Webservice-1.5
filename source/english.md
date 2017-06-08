@@ -610,7 +610,7 @@ If you have a high amount of return codes that are not listed below, please cont
 |58|Transaction not allowed. Invalid payment option|Transaction not allowed. Invalid payment option. Review if the chosen payment option is enabled in the register|Unauthorised Transaction. Contact your store.|No|
 |59|Unauthorised Transaction. Suspected fraud|Transaction not authorized. Suspected fraud|Transaction not authorized. Contact your issuing bank.|No|
 |60|Unauthorised Transaction|Unauthorised Transaction. Try again. If the error persists, the holder should contact the issuing bank.|We could not process the transaction. Try again later. If the error persists, please contact your issuing bank.|Only 4 times in 16 days.|
-|61|Bank Visa issuer unavailable|Unauthorised Transaction. Visa issuing bank available|Unauthorised Transaction. Try again. If the error persists, please contact your issuing bank.|Only 4 times in 16 days.|
+|61|Bank issuer unavailable|Unauthorised Transaction. Issuing bank unavailable|Unauthorised Transaction. Try again. If the error persists, please contact your issuing bank.|Only 4 times in 16 days.|
 |62|Unauthorised Transaction. restricted card, home|unauthorized transaction. restricted card, home|Unauthorised Transaction. Contact your issuing bank| From the next day, only 4 times in 16 days.|
 |63|Unauthorised Transaction. security breach|Transaction unauthorized. security breach.|Unauthorised Transaction. Contact your issuing bank.|No|
 |64|Unauthorised Transaction. Value below the minimum required by the issuing bank.|Unauthorised Transaction. Contact your issuing bank.| Unauthorised Transaction. Value below the minimum required by the issuing bank.|No|
