@@ -105,10 +105,9 @@ It is a certificate of greater confidence and when https is accessed, the addres
 
 Just install the following three files in the server Trustedstore. Cielo does not offer support to the installation of the Certificate. If you are unsure about how to install the EV Certificate, then you should contact your server vendor support.
 
-* [Root Certificate](./attachment/Root.crt)
-* [Intermediate 1](./attachment/Intermediate1.crt)
-* [Intermediate 2](./attachment/Intermediate2.crt)
-* [Server Certificate](./attachment/ServerCertificate.crt)
+* [Root certificate](./attachment/root.crt)
+* [Intermediate certificate](./attachment/intermediaria.crt)
+* [E-Commerce Cielo certificate](./attachment/ecommerce.cielo.com.br.crt)
 
 ## Step by Step Installation
 
@@ -126,10 +125,9 @@ Normally, the browser makes a Certificate update automatically, in  case of fail
 
 Save the files below into a new folder, or recall easily to be used later:
 
-* [Root Certificate](./attachment/Root.crt)
-* [Intermediate 1](./attachment/Intermediate1.crt)
-* [Intermediate 2](./attachment/Intermediate2.crt)
-* [Server Certificate](./attachment/ServerCertificate.crt)
+* [Root certificate](./attachment/root.crt)
+* [Intermediate certificate](./attachment/intermediaria.crt)
+* [E-Commerce Cielo certificate](./attachment/ecommerce.cielo.com.br.crt)
 
 #### 2nd STEP:
 
