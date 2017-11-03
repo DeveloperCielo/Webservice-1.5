@@ -752,6 +752,7 @@ Os erros que podem ser apresentados na mensagem XML, através da TAG `<erro>`, e
 |35|Bandeira inválida para utilização da Taxa de Embarque|A bandeira utilizada na transação não tem suporte à taxa de embarque.|Remova a taxa de embarque ou utilize um cartão que suporte esta funcionalidade: Visa ou Mastercard.|
 |36|Produto inválido para utilização da Taxa de Embarque|O produto escolhido não tem suporte à taxa de embarque.|Altere o produto.|
 |40|Prazo de cancelamento vencido|O cancelamento não pode ser realizado, pois o prazo está vencido|Rever as regras de cancelamento.|
+|41|O status da transação não permite cancelamento|Pode ser que a transação já esteja cancelada em sua totalidade|Consultar a transação e avaliar o status antes de submeter um novo cancelamento.|
 |42|Falha ao cancelar|Não foi possível realizar o cancelamento|Realizar nova tentativa. Persistindo, entrar em contato com o Suporte eCommerce e informar o TID da transação.|
 |43|Valor de cancelamento é maior que valor autorizado.|O valor que está tentando cancelar supera o valor total capturado da transação.|Revisar o valor do cancelamento parcial, pois não pode ser maior que o valor capturado da transação.|
 |51|Recorrência Inválida|As configurações da transação não permitem que a transação recorrente seja efetuada com sucesso.|Verifique se escolheu “Crédito à vista”; Verifique se está enviando somente o token ou somente o cartão de crédito|
@@ -773,6 +774,7 @@ Os erros que podem ser apresentados na mensagem XML, através da TAG `<erro>`, e
 |97|Sistema indisponível|Falha no sistema|Persistindo, entrar em contato com o Suporte.|
 |98|Timeout|A aplicação não respondeu dentro de 25 segundos|Persistindo, entrar em contato com o Suporte.|
 |99|Erro inesperado|Falha no sistema|Persistindo, entrar em contato com o Suporte e informar o TID da transação.|
+|475|Timeout na operação de cancelamento|A transação de cancelamento não respondeu dentro de 25 segundos|Consultar a transação e avaliar o status antes de submeter um novo cancelamento. Persistindo, entrar em contato com o Suporte|
 
 ## Status das transações
 
