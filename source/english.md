@@ -714,6 +714,7 @@ The errors that may appear in the XML message through the TAG '<error>' are arra
 | 35 | invalid issuer for use boarding fee | The card issuer used in the transaction does not support the boarding rate.| Remove the rate of shipment, or use a card that supports this feature: Visa or Mastercard.|
 | 36 | Invalid product for use boarding fee | The chosen product is not supported on the departure tax.| Change the product.|
 | 40 | Cancellation deadline defeated | Cancellations can not be performed because the term has expired | Review the cancellation rules.|
+|41|The stratus of transaction is not allowed to reversal|The transaction might be cancelled already|Check the transaction status before submit a new reversal.|
 | 42 | Failure to cancel | It was not possible to cancel | Perform retry. Persisting, you should contact the E-commerce support and inform the transaction TID.|
 | 43 | Cancellation value is higher than the allowed value.| The value that is trying to cancel exceeds the total value of the transaction captured.| Review the value of partial cancellation, it may not be larger than the captured value of the transaction.|
 | 51 | Invalid recurrence | The transaction settings do not allow the successful performance of the applicant transaction.| Make sure to choose "Lump Sum"; Make sure you are sending only the token or only credit card |
@@ -735,6 +736,7 @@ The errors that may appear in the XML message through the TAG '<error>' are arra
 | 97 | Unavailable System | System failure | If it persists, contact support.|
 | 98 | Timeout | The application did not respond within 25 seconds | If it persists, contact support.|
 | 99 | Unexpected Error | System failure | If it persists, contact the support and tell the transaction TID.|
+|475|Timeout on reversal operation|The reversal operation did not response withing 25 seconds|Check the transaction status before submit a new reversal. If it persists, contact support.|
 
 ## Status of transactions
 
